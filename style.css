@@ -1,34 +1,40 @@
+* {
+  box-sizing: border-box;
+}
 body {
-  background: grey;
+  background: lightgrey;
+  font-family: Arial, Helvetica, sans-serif;
 }
 h1 {
-  font-size: 30px;
+  font-size: 2rem;
+  font-weight: bold;
   text-align: center;
-}
-.telefonbuch {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 .card {
   background-color: white;
-  min-width: 400px;
-  height: 100px;
+  border-radius: 2%;
+  box-shadow: 10px 20px 30px rgb(88, 83, 83);
   padding: 1rem;
-  margin: 5px;
+  margin: 1rem;
   display: flex;
   justify-content: space-between;
-  box-shadow: 10px 20px 30px rgb(88, 83, 83);
-  border-radius: 2%;
+  align-items: center;
+  text-align: right;
 }
 .imageround {
   border-radius: 100%;
-  height: 100px;
+  width: 25%;
+  height: auto;
 }
+h2 {
+  font-weight: bold;
+  font: siz 1.5rem;
+}
+
 .namenummer {
-  text-align: right;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .card:hover {
   background-color: rgb(167, 145, 158);
@@ -37,20 +43,34 @@ h1 {
 .telefonnummer {
   color: grey;
   text-decoration: none;
+  margin-top: 1rem;
 }
 @media (min-width: 768px) {
   .telefonbuch {
-    justify-content: flex-start;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
   }
   .card {
-    height: 2%;
-    width: 2%;
+    width: calc(50%-2rem);
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
   }
   .namenummer {
     text-align: center;
+  }
+}
+@media (min-width: 1180px) {
+  .card {
+    width: calc(25%-2rem);
+    padding: 0;
+  }
+  .telefonbuch {
+    max-width: 80%;
+  }
+  img {
+    border-radius: 0;
+    width: 100%;
+    display: block;
   }
 }
